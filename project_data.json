@@ -1,0 +1,46 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Alice",
+            "email": "alice@example.com",
+            "projects": [
+                {
+                    "id": 1,
+                    "title": "Taking out the trash",
+                    "description": "",
+                    "due_date": null,
+                    "tasks": [
+                        {
+                            "id": 1,
+                            "title": "Feed the dogs",
+                            "status": "pending",
+                            "assigned_to": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Olive",
+            "email": "olive@gmail.com",
+            "projects": [
+                {
+                    "id": 2,
+                    "title": "tend to the garden",
+                    "description": "",
+                    "due_date": null,
+                    "tasks": []
+                },
+                {
+                    "id": 3,
+                    "title": "water the flowers",
+                    "description": "",
+                    "due_date": null,
+                    "tasks": []
+                }
+            ]
+        }
+    ]
+}
