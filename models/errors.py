@@ -1,5 +1,5 @@
 class TrackerError(Exception):
-    """Base class for exceptions."""
+    """Base class for all errors raised by the tracker."""
 
-class StorageError(Exception):
-    """Exception raised for errors in the storage layer."""
+class StorageError(TrackerError):
+    """Raised when saving or loading the data file fails."""

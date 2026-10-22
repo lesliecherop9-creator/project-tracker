@@ -32,18 +32,27 @@ class Tracker:
         user.add_project(proj)
         return proj
 
-    def add_task(self, user_name, project_title, task_title):
+    def find_project(self, user_name, project_title):
         user = self.find_user(user_name)
-
-        project = None
         for p in user.projects:
             if p.title == project_title:
-                project = p
-                break
+                return p
+        raise TrackerError("Project not found.")
 
-        if project is None:
-            raise TrackerError("Project not found.")
-
+    def add_task(self, user_name, project_title, task_title):
+        project = self.find_project(user_name, project_title)
         task = Task(task_title)
         project.add_task(task)
         return task
+
+    def to_dict(self):
+        # turn every user (with their projects and tasks) into plain dicts
+        return {"users": [u.to_dict() for u in self.users]}
+
+    @classmethod
+    def from_dict(cls, data):
+        # build a Tracker back from the dict we loaded from JSON
+        tracker = cls()
+        for user_data in data.get("users", []):
+            tracker.users.append(User.from_dict(user_data))
+        return tracker

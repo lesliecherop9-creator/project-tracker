@@ -1,5 +1,6 @@
 from models.person import Person
 from models.base import Identified
+from models.project import Project
 
 class User(Person, Identified):
     def __init__(self, name, email="", user_id=None):
@@ -25,6 +26,8 @@ class User(Person, Identified):
             email=data.get("email", ""),
             user_id=data.get("id")
         )
+        for p in data.get("projects", []):
+            user.projects.append(Project.from_dict(p))
         return user
 
     def __str__(self):
