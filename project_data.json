@@ -41,6 +41,41 @@
                     "tasks": []
                 }
             ]
+        },
+        {
+            "id": 3,
+            "name": "Joy",
+            "email": "",
+            "projects": [
+                {
+                    "id": 4,
+                    "title": "math assignment",
+                    "description": "",
+                    "due_date": null,
+                    "tasks": [
+                        {
+                            "id": 2,
+                            "title": "Solve questions 1 to 5",
+                            "status": "pending",
+                            "assigned_to": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Joel",
+            "email": "joel@hotmail.com",
+            "projects": [
+                {
+                    "id": 5,
+                    "title": "Pick the apples",
+                    "description": "apples should be ripe",
+                    "due_date": "2026-10-10T00:00:00",
+                    "tasks": []
+                }
+            ]
         }
     ]
 }
